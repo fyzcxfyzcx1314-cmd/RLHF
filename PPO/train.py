@@ -261,7 +261,7 @@ def generate_experiences(samples_list):
             # 计算实际奖励
             rewards = compute_rewards(kl, r, action_mask, kl_ctl = 0.1, clip_reward_value = 0.2)
             # 计算优势和回报
-            returns, advantages = get_advantages_and_returns(value, rewards, action_mask, gamma = 0.1, lambd = 0.2)
+            rewards, advantages = get_advantages_and_returns(value, rewards, action_mask, gamma = 0.1, lambd = 0.2)
         #actor_model.train()
         #critic_model.train()
 
